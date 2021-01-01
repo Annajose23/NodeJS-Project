@@ -14,6 +14,7 @@ app.use(express.static(path.join(__dirname,'public')));
 
 app.use((req,res,next) => {
     res.status(404).sendFile(path.join(__dirname, 'views', 'pageNotFound.html'));
+    res.status(404).render('404',{text:"Page not found!!"})
 });
 
 app.listen(3000, () =>{
