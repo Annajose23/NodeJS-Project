@@ -5,6 +5,8 @@ const shopRoutes = require('./routes/shop');
 const path = require('path');
 const app = express();
 
+app.set('views','views');
+app.set('view engine', 'pug');
 app.use(bodyparser.urlencoded({extended:false}));
 app.use('/admin',adminData.routes);
 app.use('/',shopRoutes);
